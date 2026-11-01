@@ -1,0 +1,78 @@
+# ==========================================
+# Playwright Test Artifacts & Outputs
+# ==========================================
+# Test results, traces, videos, and screenshots
+test-results/
+playwright-report/
+blob-report/
+.playwright-cli/
+screenshots/
+videos/
+
+# ==========================================
+# Python Environments & Cache
+# ==========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Pytest / Test Runners Cache
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.pyo
+.hypothesis/
+
+# ==========================================
+# Environment & Secrets
+# ==========================================
+# Local environment variables and secrets (Never commit secrets!)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ==========================================
+# IDEs, Editors & OS Files
+# ==========================================
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+
+# Local LLM / Ollama logs or cache (if applicable)
+*.log
