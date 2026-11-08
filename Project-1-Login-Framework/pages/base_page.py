@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page, expect, Locator
 
 class BasePage:
     DEFAULT_TIMEOUT = 5000  # Default timeout in milliseconds
@@ -18,3 +18,16 @@ class BasePage:
     def expect_visible(self, selector: str) -> None:
         """Expect an element to be visible on the page."""
         expect(self.page.locator(selector)).to_be_visible(timeout=self.DEFAULT_TIMEOUT)
+
+    def expect_visible_now(self, locator: Locator):
+        expect(locator).to_be_visible(
+            timeout=self.DEFAULT_TIMEOUT
+        )
+
+    def click(self, locator: Locator):
+        self.expect_visible(locator)
+        locator.click()
+
+    def fill(self, locator: Locator, value: str):
+        self.expect_visible(locator)
+        locator.fill(value)
