@@ -1,6 +1,6 @@
 from playwright.sync_api import Page, expect
 
-class Base_page:
+class BasePage:
     DEFAULT_TIMEOUT = 5000  # Default timeout in milliseconds
     LOAD_STATE = "domcontentloaded"  # Default load state for page navigation
 
