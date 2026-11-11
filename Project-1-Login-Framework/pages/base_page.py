@@ -19,15 +19,18 @@ class BasePage:
         """Expect an element to be visible on the page."""
         expect(self.page.locator(selector)).to_be_visible(timeout=self.DEFAULT_TIMEOUT)
 
+
+    # Rework to use Locator instead of selector string for better type safety and flexibility.
+
     def expect_visible_now(self, locator: Locator):
         expect(locator).to_be_visible(
             timeout=self.DEFAULT_TIMEOUT
         )
 
     def click(self, locator: Locator):
-        self.expect_visible(locator)
+        self.expect_visible_now(locator)
         locator.click()
 
     def fill(self, locator: Locator, value: str):
-        self.expect_visible(locator)
+        self.expect_visible_now(locator)
         locator.fill(value)

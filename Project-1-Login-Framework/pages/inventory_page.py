@@ -6,15 +6,16 @@ class InventoryPage(BasePage):
 
     def __init__(self, page: Page):
         super().__init__(page)
-        self.open_menu_button = page.locator("[data-test=\"open-menu\"]")
+        self.open_menu_button = page.locator("#react-burger-menu-btn")
         self.logout_sidebar_link = page.locator("[data-test=\"logout-sidebar-link\"]")
-        
+
     def login(self, username: str, password: str):
         login_page = LoginPage(self.page)
         login_page.navigate_to_login_page()
         login_page.login(username, password)
 
     def logout(self):
+        self.expect_visible_now(self.open_menu_button)
         self.click(self.open_menu_button)
         self.expect_visible_now(self.logout_sidebar_link)
         self.click(self.logout_sidebar_link)
